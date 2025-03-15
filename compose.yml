@@ -1,0 +1,31 @@
+services:
+  client:
+    image: angular:alpine # pas sur de celui la ...
+    volumes: 
+      - .:/client
+    working_dir: /client
+    command: a remplir 
+    ports:
+      - "${PORT}:${PORT}" # a modifier portclient par exemple
+    env_file:
+      - .env.local
+  server:
+    image: node:alpine
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: sh -c "node migrate.js && npm run dev"
+    ports:
+      - "${PORT}:${PORT}"
+    depends_on:
+      - db
+    env_file:
+      - .env.local
+  db:
+    image: mysql:latest
+    volumes:
+      - db-data:/var/lib/mysql
+    env_file:
+      - .env.local
+volumes:
+  db-data:
