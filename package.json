@@ -1,0 +1,12 @@
+{
+  "name": "projet-federe",
+  "version": "1.0.0",
+  "description": "Dans un contexte où le suivi de la santé devient de plus en plus numérique, il est essentiel de fournir aux patients et aux médecins des outils efficaces pour anticiper les maladies et améliorer la prise en charge.\r HealthConnect sera une application web accessible depuis n’importe quel appareil (PC, mobile, tablette). Elle permettra aux patients de surveiller leurs symptômes et de recevoir des alertes en cas de risque de maladie grâce à un moteur d'intelligence artificielle.\r ## 2. Objectif du projet\r L’objectif principal de HealthConnect est de :\r Permettre aux patients de suivre leur état de santé en enregistrant leurs symptômes et en recevant des alertes personnalisées.\r Faciliter l'interaction avec les professionnels de santé et un système de prise de rendez-vous automatique.\r Proposer un programme personnalisé (nutrition, activité physique) pour prévenir les maladies héréditaires.\r ## 3. Périmètre du projet\r L’application sera développée pour :\r •\tSystèmes : Application web\r •\tPublic cible : Patients et médecins.\r •\tFonctionnement : Disponible en ligne.\r •\tSécurité : Les données de santé des utilisateurs seront chiffrées conformément au RGPD.\r ## 4. Description fonctionnelle des besoins\r Fonctionnalités principales\r Système d’authentification sécurisé (email, authentification à deux facteurs).\r Chat médical pour obtenir des conseils en temps réel.\r Prise de rendez-vous automatique avec un médecin.\r Tableau de bord de santé avec suivi des symptômes et recommandations personnalisées.\r Plan de prévention personnalisé (nutrition, activité physique).\r Chiffrement des données pour garantir la confidentialité et la sécurité.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
