@@ -1,49 +1,35 @@
 services:
-  frontend:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    volumes:
-      - ./client:/client
-      - /client/node_modules    # ← ignore local node_modules
-    ports:
-      - "4200:4200"
-    depends_on:
-      - backend
-    networks:
-      - app-network
-
   backend:
-    build:
-      context: ./app
-      dockerfile: Dockerfile
+    image: node:alpine
     volumes:
       - ./app:/app
-      - /app/node_modules       # ← même principe
+    working_dir: /app
+    command: sh -c "npm install && node migrate.js && npm run dev"
     ports:
       - "3000:3000"
     depends_on:
       - db
-    networks:
-      - app-network
+
+  frontend:
+    image: node:alpine
+    volumes:
+      - ./client:/client
+    working_dir: /client
+    command: sh -c "npm install -g @angular/cli && npm install && ng serve --host 0.0.0.0"
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
 
   db:
     image: mysql:latest
-    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: app
     volumes:
       - db-data:/var/lib/mysql
     ports:
       - "3306:3306"
-    networks:
-      - app-network
 
 volumes:
   db-data:
-
-networks:
-  app-network:
