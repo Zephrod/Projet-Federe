@@ -1,31 +1,38 @@
 services:
-  client:
-    image: angular:alpine # pas sur de celui la ...
-    volumes: 
-      - .:/client
-    working_dir: /client
-    command: a remplir 
-    ports:
-      - "${PORT}:${PORT}" # a modifier portclient par exemple
-    env_file:
-      - .env.local
-  server:
-    image: node:alpine
-    volumes:
-      - .:/app
+  backend:
+    image: node:18-alpine
     working_dir: /app
-    command: sh -c "node migrate.js && npm run dev"
+    volumes:
+      - ./app:/app
+    command: sh -c "npm install && node server.js"
     ports:
-      - "${PORT}:${PORT}"
+      - "3000:3000"
     depends_on:
       - db
-    env_file:
-      - .env.local
+
+  frontend:
+    image: node:18-alpine
+    working_dir: /client
+    volumes:
+      - ./client:/client
+    command: sh -c "npm install -g @angular/cli && npm install && ng serve --host 0.0.0.0"
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+
   db:
-    image: mysql:latest
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
     volumes:
       - db-data:/var/lib/mysql
-    env_file:
-      - .env.local
+    ports:
+      - "3306:3306"
+
 volumes:
   db-data:
