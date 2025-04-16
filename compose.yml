@@ -5,6 +5,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    volumes:
+      - ./app:/app
+      - /app/node_modules
     depends_on:
       db:
         condition: service_healthy
@@ -15,6 +18,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4200:4200"
+    volumes:
+      - ./client:/client
+      - /client/node_modules
     depends_on:
       - backend
 
