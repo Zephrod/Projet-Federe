@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /client
 
-COPY package.json ./
+COPY package.json package-lock.json* ./
 RUN npm install -g @angular/cli && npm install
 
 COPY . .
