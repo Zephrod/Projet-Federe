@@ -1,3 +1,4 @@
+const User = require("../models/user");
 // !  a rebosser proprement notemment try catch pour les crash etc ..
 module.exports = {
     getAll: async (req, res, next) => {
@@ -46,4 +47,7 @@ module.exports = {
         });
         res.status(200).json({message: "Account activated"});
       } catch (err) {
-        res.status(500).json({message: err.message});}}};
+        res.status(500).json({message: err.message});
+      }
+    }
+};
