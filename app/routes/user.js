@@ -4,7 +4,7 @@ const userController = require("../controllers/user.js");
 
 const router = new Router();
 
-router.get("/user", userController.getAll);
+router.get("/users", userController.getAll);
 
 router.post("/user", userController.create);
 
