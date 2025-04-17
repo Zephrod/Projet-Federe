@@ -12,8 +12,8 @@ User.init(
       primaryKey: true
     },
     role: {
-      type: DataTypes.ENUM('user','admin'),
-      defaultValue : 'user',
+      type: DataTypes.ENUM('patient','medecin','admin'),
+      defaultValue : 'patient',
       allowNull: false,
     },
     name: DataTypes.STRING,
@@ -35,12 +35,8 @@ User.init(
     },
     activated: {
       type: DataTypes.BOOLEAN,
-      allowNull: true,
+      allowNull: false,
       defaultValue: false,
-    },
-    birthday: {
-      type: DataTypes.DATEONLY,
-      allowNull: true,
     },
   },
   {
@@ -59,4 +55,7 @@ User.beforeUpdate(async (user) => {
     user.password = await bcrypt.hash(user.password, salt);
   }
 });
+User.prototype.checkPassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+  };  
 module.exports = User;

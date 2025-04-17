@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require('cors');
 
 const userRouter = require("./routes/user");
+const authRouter = require("./routes/auth");
 const app = express();
 
 app.use(cors());
@@ -13,6 +14,7 @@ app.get("/", (request, response, next)=>{
 });
 
 app.use(userRouter);
+app.use(authRouter);
 
 app.listen(PORT, () =>
     console.log("Server is listening on port " + PORT)
