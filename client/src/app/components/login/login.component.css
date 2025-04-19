@@ -1,0 +1,53 @@
+.login-container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  a {
+    text-decoration: none; /* Si tu veux enlever le souligné */
+    color: blue;           /* Changer la couleur du texte en bleu pour le rendre visible */
+    cursor: pointer;      /* Changer le curseur pour indiquer que c'est cliquable */
+  }
+  

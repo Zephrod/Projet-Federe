@@ -1,3 +1,47 @@
-<a routerLink="/login" class="btn btn-outline-info ms-1">test</a>
-
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+  
+      <!-- Titre / Logo principal à gauche -->
+      <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
+        <i class="bi bi-house"></i> Accueil
+      </a>
+  
+      <!-- Bouton burger pour mobile -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Menu de navigation -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" routerLink="/login" routerLinkActive="active">
+              <i class="bi bi-plug"></i> Connexion
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" routerLink="/register" routerLinkActive="active">
+              <i class="bi-pencil-square"></i> Inscription
+            </a>
+          </li>          
+        </ul>
+  
+        <!-- Logo à droite -->
+        <div class="d-flex align-items-center">
+          <img src="assets/MediApp.png" alt="Logo" style="height: 40px;" />
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+  
+  <router-outlet></router-outlet>
+  
