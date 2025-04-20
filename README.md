@@ -1,4 +1,5 @@
-# Cahier des charges - HealthConnect
+# Cahier des charges - MediAPP
+
 ## 1. Contexte et définition du projet
 Dans un contexte où le suivi de la santé devient de plus en plus numérique, il est essentiel de fournir aux patients et aux médecins des outils efficaces pour anticiper les maladies et améliorer la prise en charge.
 HealthConnect sera une application web accessible depuis n’importe quel appareil (PC, mobile, tablette). Elle permettra aux patients de surveiller leurs symptômes et de recevoir des alertes en cas de risque de maladie grâce à un moteur d'intelligence artificielle.
