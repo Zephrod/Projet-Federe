@@ -49,7 +49,7 @@ export class AuthService {
   // Méthode de redirection selon le rôle
   redirectToDashboard(role: 'patient' | 'doctor'): void {
     if (role === 'patient') {
-      this.router.navigate(['/dashboard/patient']);
+      this.router.navigate(['/dashboard/patient']);//dashboard-patient.component.html
     } else {
       this.router.navigate(['/dashboard/doctor']);
     }

@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProfilePatientComponent } from './components/dashboard-patient/profile-patient/profile-patient.component';
 import { MonappComponent } from './components/monapp/monapp.component';
 import { AuthGuard } from './auth.guard';
+import {DashboardPatientComponent} from './components/dashboard-patient/dashboard-patient.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, // Page de connexion
   { 
     path: 'dashboard/patient', 
-    component: ProfilePatientComponent,
+    component: DashboardPatientComponent,
     canActivate: [AuthGuard] // Protéger cette route avec AuthGuard
   }, 
   // { 
