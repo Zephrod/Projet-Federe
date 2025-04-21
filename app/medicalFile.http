@@ -1,0 +1,32 @@
+### GET all medical files
+GET http://localhost:3000/api/medical-files
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+
+### GET one medical file by ID
+GET http://localhost:3000/api/medical-file/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+
+### CREATE a medical file
+POST http://localhost:3000/api/medical-file
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+
+{
+  "name": "fatigue",
+  "severity": "moderate",
+  "description": "Fatigue persistante depuis plus de 6 mois"
+}
+
+### UPDATE a medical file
+PATCH http://localhost:3000/api/medical-file/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+
+{
+  "name": "Fatigue aiguë",
+  "severity": "severe"
+}
+
+### DELETE a medical file
+DELETE http://localhost:3000/api/medical-file/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
