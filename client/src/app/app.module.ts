@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonappComponent } from './components/monapp/monapp.component';
+import { ProfilePatientComponent } from './components/dashboard-patient/profile-patient/profile-patient.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { MonappComponent } from './components/monapp/monapp.component';
   bootstrap: [AppComponent],
   declarations: [
   
-    MonappComponent
+    MonappComponent,
+       ProfilePatientComponent,
+      
   ]
 })
 export class AppModule { }
