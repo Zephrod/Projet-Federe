@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonappComponent } from './components/monapp/monapp.component';
 import { ProfilePatientComponent } from './components/dashboard-patient/profile-patient/profile-patient.component';
+import { ProfileMedecinComponent } from './components/dashboard-medecin/profile-medecin/profile-medecin.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { ProfilePatientComponent } from './components/dashboard-patient/profile-
   
     MonappComponent,
        ProfilePatientComponent,
+       ProfileMedecinComponent,
       
   ]
 })
