@@ -1,10 +1,11 @@
 const { Router } = require("express");
 const userController = require("../controllers/user.js");
+const authMiddleware = require("../middlewares/auth.js")
 // ! ajouter les middlewares 
 
 const router = new Router();
 
-router.get("/users", userController.getAll);
+router.get("/users", authMiddleware, userController.getAll);
 
 router.post("/user", userController.create);
 

@@ -1,6 +1,6 @@
 ### GET users
-GET http://localhost:3000/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNzM0NjkyMzQ1fQ.yaaXCzcufMQLdKIKqU4ZywqAMO4dHeMsLP3Po-1l4hA
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
 
 ### POST users
 POST http://localhost:3000/user
@@ -11,6 +11,15 @@ Content-Type: application/json
   "email": "j@d.com",
   "password": "12Az!3456"
 }
+### POST users
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "name": " Doe",
+  "email": "a@d.com",
+  "password": "12Az!3456"
+}
 ### activete user
 PATCH http://localhost:3000/user/1/activate
 Content-Type: application/json
@@ -19,7 +28,7 @@ Content-Type: application/json
   "activated": true
 }
 ### GET a user
-GET http://localhost:3000/user/1
+GET http://localhost:3000/user/3
 
 ### PATCH a user
 PATCH http://localhost:3000/user/1
