@@ -1,30 +1,32 @@
+// src/app/app.module.ts
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { MonappComponent } from './components/monapp/monapp.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component'; // C'est un composant standalone
 import { ProfilePatientComponent } from './components/dashboard-patient/profile-patient/profile-patient.component';
-import { ProfileMedecinComponent } from './components/dashboard-medecin/profile-medecin/profile-medecin.component';
-import { CalendarPatientComponent } from './components/dashboard-patient/calendar-patient/calendar-patient.component';
-import { ChatPatientComponent } from './components/dashboard-patient/chat-patient/chat-patient.component';
+// ... autres imports
 
 @NgModule({
+  declarations: [
+    MonappComponent,
+    RegisterComponent,
+    // Ne pas inclure LoginComponent ici s'il est standalone
+    ProfilePatientComponent,
+    // ... autres composants non-standalone
+  ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    AppComponent// ✅ On l’importe ici car il est standalone
-    
+    LoginComponent, // Si c'est un composant standalone, il doit être importé ici
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  declarations: [
-  
-    MonappComponent,
-       ProfilePatientComponent,
-       ProfileMedecinComponent,
-       CalendarPatientComponent,
-       ChatPatientComponent,
-      
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
