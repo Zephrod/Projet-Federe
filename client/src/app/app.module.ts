@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { MonappComponent } from './components/monapp/monapp.component';
 import { ProfilePatientComponent } from './components/dashboard-patient/profile-patient/profile-patient.component';
 import { ProfileMedecinComponent } from './components/dashboard-medecin/profile-medecin/profile-medecin.component';
+import { CalendarPatientComponent } from './components/dashboard-patient/calendar-patient/calendar-patient.component';
+import { ChatPatientComponent } from './components/dashboard-patient/chat-patient/chat-patient.component';
 
 @NgModule({
   imports: [
@@ -20,6 +22,8 @@ import { ProfileMedecinComponent } from './components/dashboard-medecin/profile-
     MonappComponent,
        ProfilePatientComponent,
        ProfileMedecinComponent,
+       CalendarPatientComponent,
+       ChatPatientComponent,
       
   ]
 })
