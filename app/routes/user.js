@@ -14,7 +14,7 @@ router.get("/user/:id", userController.getOne);
 
 router.patch("/user/:id", userController.update);
 
-router.delete("/user/:id", auth, allowSelfOrRole("admin"), userController.delete);
+router.delete("/user/:id", authMiddleware, allowSelfOrRole("admin"), userController.delete);
 
 router.patch("/user/:id/activate", userController.activateAccount);
 
