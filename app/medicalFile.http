@@ -1,32 +1,36 @@
 ### GET all medical files
-GET http://localhost:3000/api/medical-files
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+GET http://localhost:3000/medical-files
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6Im1lZGVjaW4iLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
 
 ### GET one medical file by ID
-GET http://localhost:3000/api/medical-file/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+GET http://localhost:3000/medical-file/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6Im1lZGVjaW4iLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
 
 ### CREATE a medical file
-POST http://localhost:3000/api/medical-file
+POST http://localhost:3000/medical-file
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6Im1lZGVjaW4iLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
 
 {
-  "name": "fatigue",
-  "severity": "moderate",
-  "description": "Fatigue persistante depuis plus de 6 mois"
+  "patientId": 1,
+  "allergies": "Pénicilline, Arachides",
+  "maladiesHereditaires": "Diabète type 2, Hypertension",
+  "antecedentsMedicaux": "Appendicectomie (2020), Fracture du poignet droit (2019)",
+  "groupeSanguin": "A+",
+  "traitementEnCours": "Insuline - 2 injections par jour"
 }
 
 ### UPDATE a medical file
-PATCH http://localhost:3000/api/medical-file/1
+PATCH http://localhost:3000/medical-file/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6Im1lZGVjaW4iLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
 
 {
-  "name": "fatigue",
-  "severity": "severe"
+  "allergies": "Pénicilline, Arachides, Lactose",
+  "traitementEnCours": "Insuline - 3 injections par jour, Antihistaminique",
+  "antecedentsMedicaux": "Appendicectomie (2020), Fracture du poignet droit (2019), Pneumonie (2023)"
 }
 
 ### DELETE a medical file
-DELETE http://localhost:3000/api/medical-file/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
+DELETE http://localhost:3000/medical-file/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6Im1lZGVjaW4iLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA

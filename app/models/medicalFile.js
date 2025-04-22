@@ -7,17 +7,44 @@ const MedicalFile = sequelize.define("MedicalFile", {
     autoIncrement: true,
     primaryKey: true
   },
-  name: {
-    type: DataTypes.ENUM("gripe", "migraine", "fatigue","fievre","autres"),
-    allowNull: false
+  patientId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'Users',
+      key: 'id'
+    }
   },
-  severity: {
-    type: DataTypes.ENUM("mild", "moderate", "severe"),
-    allowNull: false
+  allergies: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+    defaultValue: null
   },
-  description: {
+  maladiesHereditaires: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+    defaultValue: null
+  },
+  antecedentsMedicaux: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+    defaultValue: null
+  },
+  groupeSanguin: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  traitementEnCours: {
     type: DataTypes.TEXT,
     allowNull: true
+  },
+  dateCreation: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
+  },
+  derniereMiseAJour: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   }
 }, {
   tableName: "medical_files",
