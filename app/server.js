@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use("/api", mediRouter);
+app.use(mediRouter);
 
 app.get("/", (request, response, next)=>{
     response.send("Hello World !!");
