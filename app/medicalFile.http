@@ -23,7 +23,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDUyNjUxNzQsImV4cCI6MTc0NTI2ODc3NH0.mIn4pXII5VJkEOaOLAGBWDgge1jabc1wMBtJCNOGuFA
 
 {
-  "name": "Fatigue aiguë",
+  "name": "fatigue",
   "severity": "severe"
 }
 
