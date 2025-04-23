@@ -30,7 +30,6 @@ module.exports = {
         maxAge: 3600000, // 1 heure en millisecondes
         sameSite: 'strict'
       });
-
       res.json({ token });
     } catch (err) {
       next(err);

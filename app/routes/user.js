@@ -1,14 +1,17 @@
 const { Router } = require("express");
 
 const userController = require("../controllers/user.js");
-const authMiddleware = require("../middlewares/auth.js")
+
+const authMiddleware = require("../middlewares/auth.js");
 const allowSelfOrRole = require("../middlewares/allowSelfOrRole.js"); //verifie que je suis qui je suis !
+const validate = require("../middlewares/validate.js");
+const {userCreation} =require("../validators/user.js");
 
 const router = new Router();
 
-router.get("/users", authMiddleware, userController.getAll);
+router.get("/users", userController.getAll);
 
-router.post("/user", userController.create);
+router.post("/user", validate(userCreation), userController.create);
 
 router.get("/user/:id", userController.getOne);
 

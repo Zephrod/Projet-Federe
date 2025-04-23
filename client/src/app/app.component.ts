@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  standalone: false,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'client';
+export class AppComponent implements OnInit {
+  message: string = '';
+  users: any[] = [];
+  newUser = {name : '', email: '', password: ''};
+  credentials = {email: '', password: ''};
+  errorMessage = '';
 
-  
+  constructor(
+  ) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 }
+

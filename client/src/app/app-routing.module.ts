@@ -1,27 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
+import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ProfilePatientComponent } from './components/dashboard-patient/profile-patient/profile-patient.component';
-import { MonappComponent } from './components/monapp/monapp.component';
-import { AuthGuard } from './auth.guard';
-import {DashboardPatientComponent} from './components/dashboard-patient/dashboard-patient.component';
-
+import { registerLocaleData } from '@angular/common';
 
 const routes: Routes = [
-  { path: '', component: MonappComponent }, // Page d'accueil
-  { path: 'register', component: RegisterComponent }, // Page d'inscription
-  { path: 'login', component: LoginComponent }, // Page de connexion
-  { 
-    path: 'dashboard/patient', 
-    component: DashboardPatientComponent,
-    canActivate: [AuthGuard] // Protéger cette route avec AuthGuard
-  }, 
-  // { 
-  //   path: 'dashboard/doctor', 
-  //   component: ProfileMedecinComponent,
-  //   canActivate: [AuthGuard] // Protéger cette route avec AuthGuard quand disponible
-  // },
+  {path:'',component:MainComponent,children:[
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent }
+
+  ]}
 ];
 
 @NgModule({

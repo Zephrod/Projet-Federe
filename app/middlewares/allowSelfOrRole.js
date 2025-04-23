@@ -9,4 +9,3 @@ module.exports = (role) => {
       return res.sendStatus(403);
     };
   };
-  

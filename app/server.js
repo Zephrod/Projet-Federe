@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const mediRouter = require("./routes/medicalFile");
 const userRouter = require("./routes/user");
 const authRouter = require("./routes/auth");
+const appointmentRouter = require("./routes/appointment")
 const app = express();
 
 app.use(cors({
@@ -14,10 +15,9 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use(express.json());
-app.use(mediRouter);
 
 app.get("/", (request, response, next)=>{
-    response.send("Hello World !!");
+    response.json({message : "Hello World !!"});
 });
 
 app.use(userRouter);

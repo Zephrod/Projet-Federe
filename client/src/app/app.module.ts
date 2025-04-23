@@ -1,30 +1,20 @@
-// src/app/app.module.ts
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { MonappComponent } from './components/monapp/monapp.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MainComponent } from './components/main/main.component';
+import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component'; // C'est un composant standalone
-import { ProfilePatientComponent } from './components/dashboard-patient/profile-patient/profile-patient.component';
-// ... autres imports
 
 @NgModule({
-  declarations: [
-    MonappComponent,
-    RegisterComponent,
-    // Ne pas inclure LoginComponent ici s'il est standalone
-    ProfilePatientComponent,
-    // ... autres composants non-standalone
-  ],
+  declarations: [AppComponent, MainComponent, LoginComponent, RegisterComponent],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     AppRoutingModule,
-    LoginComponent, // Si c'est un composant standalone, il doit être importé ici
+    HttpClientModule, // 👈 Obligatoire pour faire des requêtes HTTP
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
