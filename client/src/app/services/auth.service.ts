@@ -20,4 +20,9 @@ export class ApiService {
   login(credentials: {email: string, password: string }){
     return this.http.post<any>('http://localhost:3000/login',credentials);
   }
+  deleteUser(userId: string): Observable<any> {
+    console.log("ID à supprimer:", userId); 
+    return this.http.delete(`http://localhost:3000/user/${userId}`);
+  }
+
 }
