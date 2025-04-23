@@ -1,27 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from './services/auth.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone:false,
 })
-export class AppComponent implements OnInit {
-  message: string = '';
-  users: any[] = []; // 👈 ajoute cette ligne
-  constructor(private authService: ApiService) {}
+export class AppComponent {
+  message: string = '';  // Variable pour afficher le message
 
-  ngOnInit() {
-    this.authService.getUser().subscribe({
-      next: (users) => {
-        console.log('UTILISATEURS REÇUS 🔥:', users);
-        this.users = users;
-      },
-      error: (err) => {
-        console.error('Erreur lors du fetch des utilisateurs:', err);
-      }
-    });
+  afficherMessage(): void {
+    this.message = 'Bonjour, vous avez cliqué sur le bouton !';
   }
-  
 }
-
