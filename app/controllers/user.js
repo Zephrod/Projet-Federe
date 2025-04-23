@@ -5,7 +5,12 @@ module.exports = {
       res.json(await User.findAll());
     },
     create: async (req, res, next) => {
-      res.status(201).json(await User.create(req.body));
+      try {
+        const user = await User.create(req.body);
+        res.status(201).json(user);
+      } catch (err) {
+        next(err); // envoyé au middleware global
+      }
     },
     getOne: async (req, res, next) => {
       const user = await User.findByPk(parseInt(req.params.id));
