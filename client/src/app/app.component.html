@@ -11,7 +11,8 @@
 <pre>{{ users | json }}</pre>
 <ul>
   <li *ngFor="let user of users">
-    {{ user.name }}
+    {{ user | json }}
+    <button type="button" (click)="deleteUser(user.id)">Supprimer</button>
   </li>
 </ul>
 
@@ -40,7 +41,6 @@
   <button type="submit" [disabled]="!loginForm.form.valid">Se connecter</button>
 </form>
 
-<!-- Nouvelle section pour le logout -->
 <!-- Bouton de déconnexion qui n'apparaît que si l'utilisateur est connecté -->
 <button 
   *ngIf="isLoggedIn()" 
@@ -49,6 +49,8 @@
   class="logout-btn">
   Se déconnecter
 </button>
+
+<div *ngIf="message" class="message">{{ message }}</div>
 
 <button type="button" (click)="testClick()">test</button>
 <pre>{{ credentials | json }}</pre>

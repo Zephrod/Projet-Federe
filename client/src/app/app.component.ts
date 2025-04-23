@@ -86,4 +86,18 @@ export class AppComponent implements OnInit {
     // Si vous utilisez le router pour la redirection
     // this.router.navigate(['/login']);
   }
+  deleteUser(userId: string) {
+    if (confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')) {
+      this.authService.deleteUser(userId).subscribe({
+        next: (response) => {
+          console.log('Utilisateur supprimé avec succès :', response);
+          // Mettre à jour la liste des utilisateurs
+          this.users = this.users.filter(user => user.id !== userId);
+        },
+        error: (err) => {
+          console.error('Erreur lors de la suppression :', err);
+        }
+      });
+    }
+  }
 }
