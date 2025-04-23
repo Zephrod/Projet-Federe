@@ -11,11 +11,13 @@ export class ApiService {
   getHello(): Observable<any> {
     return this.http.get('http://localhost:3000/');
   }
-<<<<<<< HEAD
-}
-=======
   getUser(): Observable<any> {
     return this.http.get('http://localhost:3000/users');
   } 
+  createUser(user : any): Observable<any> {
+    return this.http.post('http://localhost:3000/user', user);
+  }  
+  login(credentials: {email: string, password: string }){
+    return this.http.post<any>('http://localhost:3000/login',credentials);
+  }
 }
->>>>>>> 74c34aec1076df981ad8a04df9a41477781c67c1
