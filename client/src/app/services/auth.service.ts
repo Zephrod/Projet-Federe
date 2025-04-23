@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
+  /* // ! route test
   getHello(): Observable<any> {
     return this.http.get('http://localhost:3000/');
   }
+  */
   getUser(): Observable<any> {
     return this.http.get('http://localhost:3000/users');
   } 
