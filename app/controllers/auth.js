@@ -34,5 +34,15 @@ module.exports = {
     } catch (err) {
       next(err);
     }
+  },
+  logout: async (req, res, next) => {
+    res.cookie('auth_token', '', { 
+      maxAge: 0,
+      httpOnly: true,
+      path: '/',
+      sameSite: 'Strict',
+      expires: new Date(0)
+    });
+    res.status(200).json({ message: 'Déconnexion réussie' });
   }
 };

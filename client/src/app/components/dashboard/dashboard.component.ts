@@ -26,7 +26,7 @@ export class DashboardComponent  implements OnInit {
   ngOnInit() {
     this.authService.getUser().subscribe({
       next: (users) => {
-        console.log('UTILISATEURS REÇUS 🔥:', users);
+        console.log('UTILISATEURS REÇUS :', users);
         this.users = users;
       },
       error: (err) => {
@@ -35,16 +35,19 @@ export class DashboardComponent  implements OnInit {
     });
   }
 
-logout() {
-  // Afficher le token avant de le supprimer pour vérification
-  const token = localStorage.getItem('token');
-  console.log('Token avant déconnexion:', token);
-  this.router.navigateByUrl("/login");
-  // Supprimer le token
-  localStorage.removeItem('token');
-  
-  console.log('Déconnexion réussie, token supprimé');
-}
+  logout(): void {
+    this.authService.logout().subscribe({
+      next: () => {
+        console.log('Déconnexion réussie');
+        this.router.navigateByUrl("/login");
+      },
+      error: (err) => {
+        console.error('Erreur lors de la déconnexion', err);
+        // Rediriger vers la page de login même en cas d'erreur
+        this.router.navigateByUrl("/login");
+      }
+    });
+  }
 
 }
 

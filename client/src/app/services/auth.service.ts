@@ -19,12 +19,19 @@ export class ApiService {
   createUser(user : any): Observable<any> {
     return this.http.post('http://localhost:3000/user', user);
   }  
-  login(credentials: {email: string, password: string }){
-    return this.http.post<any>('http://localhost:3000/login',credentials);
+  login(credentials: {email: string, password: string }) {
+    return this.http.post<any>('http://localhost:3000/login', credentials, {
+      withCredentials: true  // Ajouter cette ligne pour permettre l'envoi/réception des cookies
+    });
   }
   deleteUser(userId: string): Observable<any> {
     console.log("ID à supprimer:", userId); 
     return this.http.delete(`http://localhost:3000/user/${userId}`);
   }
-
+  logout(): Observable<any> {
+    return this.http.post<any>(`http://localhost:3000/user/logout`, {}, {
+      withCredentials: true
+    });
+  }
+  
 }
