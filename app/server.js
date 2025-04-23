@@ -1,13 +1,18 @@
 const PORT = 3000;
 const express = require("express");
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const mediRouter = require("./routes/medicalFile");
 const userRouter = require("./routes/user");
 const authRouter = require("./routes/auth");
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:4200',
+  credentials: true
+}));
+app.use(cookieParser());
 app.use(express.json());
 app.use(mediRouter);
 

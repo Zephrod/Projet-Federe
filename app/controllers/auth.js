@@ -23,6 +23,14 @@ module.exports = {
         { expiresIn: '1h' }
       );
 
+      // Configurer le cookie avec le token
+      res.cookie('auth_token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 3600000, // 1 heure en millisecondes
+        sameSite: 'strict'
+      });
+
       res.json({ token });
     } catch (err) {
       next(err);
