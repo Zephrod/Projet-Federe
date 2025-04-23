@@ -1,0 +1,29 @@
+<!-- Navbar horizontale simple -->
+<nav class="horizontal-navbar">
+    <div class="navbar-container">
+      <!-- Logo / Titre à gauche -->
+      <div class="navbar-brand">
+        <a routerLink="/dashboard">Sahtek</a>
+      </div>
+      
+      <!-- Menu principal horizontal au centre -->
+      <ul class="navbar-menu">
+        <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+        <li><a routerLink="/profile" routerLinkActive="active">Profil</a></li>
+        <li><a routerLink="/settings" routerLinkActive="active">Paramètres</a></li>
+      </ul>
+      
+      <!-- Bouton de déconnexion à droite -->
+      <div class="navbar-actions">
+        <button class="logout-btn" (click)="logout()">Déconnexion</button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Contenu du dashboard -->
+  <div class="dashboard-container">
+    <h1>Bienvenue</h1>
+    <div class="dashboard-content">
+      <!-- Votre contenu ici -->
+    </div>
+  </div>
