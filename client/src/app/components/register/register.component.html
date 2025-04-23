@@ -1,1 +1,10 @@
-<p>register works!</p>
+<p>Login works!</p>
+<h2>Ajouter un utilisateur</h2>
+
+<form (ngSubmit)="createNewUser()">
+  <input type="text" [(ngModel)]="newUser.name" name="name" placeholder="Nom" required />
+  <input type="text" [(ngModel)]="newUser.email" name="email" placeholder="Email" required />
+  <input type="text" [(ngModel)]="newUser.password" name="password" placeholder="password" required />
+  <button type="submit">Créer</button>
+</form>
+<a routerLink="/login">Connexion</a>

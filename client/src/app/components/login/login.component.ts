@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
     private authService: ApiService,
     private router: Router
   ) {}
+
+
+
+
   ngOnInit() {
     this.authService.getUser().subscribe({
       next: (users) => {
@@ -41,22 +45,8 @@ export class LoginComponent implements OnInit {
     return localStorage.getItem('token');
   }
 
-  testClick() {
-    console.log("c est bon ca marche !!");
-  }
 
-  createNewUser() {
-    this.authService.createUser(this.newUser).subscribe({
-      next: (res) => {
-        console.log('Utilisateur créé ✅:', res);
-        this.users.push(res); 
-        this.newUser.name = ''; 
-        this.newUser.email = '';
-        this.newUser.password = '';
-      },
-      error: (err) => console.error('Erreur lors de la création ❌:', err)
-    });
-  }
+
   
   login() {
     console.log("bouton clické");
@@ -65,7 +55,7 @@ export class LoginComponent implements OnInit {
         console.log('Token reçu :', res.token);
         localStorage.setItem('token', res.token);
         //redirection
-        this.router.navigateByUrl("/login");
+        this.router.navigateByUrl("/dashboard");
       },
       error: (err) => {
         this.errorMessage = 'echec de la connexion';
