@@ -8,13 +8,20 @@ import { ApiService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
   message: string = '';
-
+  users: any[] = []; // 👈 ajoute cette ligne
   constructor(private authService: ApiService) {}
 
   ngOnInit() {
-    this.authService.getHello().subscribe({
-      next: (res) => this.message = res.message,
-      error: (err) => console.error('Erreur API :', err)
+    this.authService.getUser().subscribe({
+      next: (users) => {
+        console.log('UTILISATEURS REÇUS 🔥:', users);
+        this.users = users;
+      },
+      error: (err) => {
+        console.error('Erreur lors du fetch des utilisateurs:', err);
+      }
     });
   }
+  
 }
+

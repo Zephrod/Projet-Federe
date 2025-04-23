@@ -11,4 +11,7 @@ export class ApiService {
   getHello(): Observable<any> {
     return this.http.get('http://localhost:3000/');
   }
+  getUser(): Observable<any> {
+    return this.http.get('http://localhost:3000/users');
+  } 
 }

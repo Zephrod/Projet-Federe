@@ -6,7 +6,7 @@ const allowSelfOrRole = require("../middlewares/allowSelfOrRole.js"); //verifie 
 
 const router = new Router();
 
-router.get("/users", authMiddleware, userController.getAll);
+router.get("/users", userController.getAll);
 
 router.post("/user", userController.create);
 
