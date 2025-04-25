@@ -1,128 +1,86 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Sahtek</title>
-  <link rel="stylesheet" href="dashboard.component.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-  <!-- Navbar horizontale moderne -->
-  <nav class="horizontal-navbar">
-    <div class="navbar-container">
-      <!-- Logo / Titre à gauche -->
-      <div class="navbar-brand">
-        <a routerLink="/dashboard">
-          <i class="fas fa-heartbeat"></i> Sahtek
-        </a>
-      </div>
-      
-      <!-- Menu principal horizontal au centre -->
-      <ul class="navbar-menu">
-        <li><a routerLink="/dashboard" routerLinkActive="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
-        <li><a routerLink="/profile" routerLinkActive="active"><i class="fas fa-user"></i> Profil</a></li>
-        <li><a routerLink="/settings" routerLinkActive="active"><i class="fas fa-cog"></i> Paramètres</a></li>
-      </ul>
-      
-      <!-- Bouton de déconnexion à droite -->
-      <div class="navbar-actions">
-        <button class="logout-btn" (click)="logout()">
-          <i class="fas fa-sign-out-alt"></i> Déconnexion
-        </button>
-      </div>
+<!-- Navbar horizontale moderne -->
+<nav class="horizontal-navbar">
+  <div class="navbar-container">
+    <!-- Logo / Titre à gauche -->
+    <div class="navbar-brand">
+      <a routerLink="/dashboard">
+        <i class="fas fa-heartbeat"></i> Sahtek
+      </a>
     </div>
-  </nav>
-  
-  <!-- Contenu du dashboard -->
-  <div class="dashboard-container">
-    <div class="dashboard-header">
-      <h1>Bienvenue sur votre tableau de bord</h1>
-      <p class="dashboard-subtitle">Retrouvez ici toutes les informations importantes</p>
-    </div>
-    
-    <div class="dashboard-grid">
-      <!-- Carte statistique 1 -->
-      <div class="dashboard-card">
-        <div class="card-icon">
-          <i class="fas fa-users"></i>
-        </div>
-        <div class="card-content">
-          <h3>Utilisateurs</h3>
-          <p class="card-value">1,254</p>
-          <p class="card-trend positive"><i class="fas fa-arrow-up"></i> +12%</p>
-        </div>
-      </div>
-      
-      <!-- Carte statistique 2 -->
-      <div class="dashboard-card">
-        <div class="card-icon">
-          <i class="fas fa-file-medical"></i>
-        </div>
-        <div class="card-content">
-          <h3>Consultations</h3>
-          <p class="card-value">523</p>
-          <p class="card-trend positive"><i class="fas fa-arrow-up"></i> +8%</p>
-        </div>
-      </div>
-      
-      <!-- Carte statistique 3 -->
-      <div class="dashboard-card">
-        <div class="card-icon">
-          <i class="fas fa-calendar-check"></i>
-        </div>
-        <div class="card-content">
-          <h3>Rendez-vous</h3>
-          <p class="card-value">87</p>
-          <p class="card-trend negative"><i class="fas fa-arrow-down"></i> -3%</p>
-        </div>
-      </div>
-      
-      <!-- Carte statistique 4 -->
-      <div class="dashboard-card">
-        <div class="card-icon">
-          <i class="fas fa-clipboard-list"></i>
-        </div>
-        <div class="card-content">
-          <h3>Tâches</h3>
-          <p class="card-value">42</p>
-          <p class="card-trend neutral"><i class="fas fa-minus"></i> 0%</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Section activité récente -->
-    <div class="recent-activity">
-      <h2>Activité récente</h2>
-      <div class="activity-list">
-        <div class="activity-item">
-          <div class="activity-icon"><i class="fas fa-user-plus"></i></div>
-          <div class="activity-content">
-            <p class="activity-text"><strong>Nouvel utilisateur inscrit</strong> - Jean Dupont</p>
-            <p class="activity-time">Il y a 23 minutes</p>
-          </div>
-        </div>
-        <div class="activity-item">
-          <div class="activity-icon"><i class="fas fa-calendar-plus"></i></div>
-          <div class="activity-content">
-            <p class="activity-text"><strong>Nouveau rendez-vous</strong> - Marie Martin</p>
-            <p class="activity-time">Il y a 1 heure</p>
-          </div>
-        </div>
-        <div class="activity-item">
-          <div class="activity-icon"><i class="fas fa-file-medical-alt"></i></div>
-          <div class="activity-content">
-            <p class="activity-text"><strong>Rapport mis à jour</strong> - Analyse mensuelle</p>
-            <p class="activity-time">Il y a 3 heures</p>
-          </div>
-        </div>
-      </div>
+    <!-- Menu principal horizontal au centre -->
+    <ul class="navbar-menu">
+      <li><a routerLink="/dashboard" routerLinkActive="active"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active"><i class="fas fa-user"></i> Profil</a></li>
+      <li><a routerLink="/settings" routerLinkActive="active"><i class="fas fa-cog"></i> Paramètres</a></li>
+    </ul>
+    <!-- Bouton de déconnexion à droite -->
+    <div class="navbar-actions">
+      <button class="logout-btn" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i> Déconnexion
+      </button>
     </div>
   </div>
-  
-  <!-- Footer -->
-  <footer class="dashboard-footer">
-    <p>© 2025 Sahtek - Tous droits réservés</p>
-  </footer>
-</body>
-</html>
+</nav>
+
+<!-- Contenu principal du dashboard -->
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>Bienvenue sur votre tableau de bord</h1>
+    <p class="dashboard-subtitle">Retrouvez ici toutes les informations importantes</p>
+  </header>
+
+  <!-- Section formulaire ajout rendez-vous -->
+  <section class="appointment-section">
+    <h2>Ajouter un rendez-vous</h2>
+    <form (ngSubmit)="addAppointment()" #appointmentForm="ngForm" class="appointment-form">
+      <input type="date" [(ngModel)]="newAppointment.date" name="date" required>
+      <input type="text" [(ngModel)]="newAppointment.motif" name="motif" placeholder="Motif" required>
+      <input type="number" [(ngModel)]="newAppointment.patientId" name="patientId" placeholder="ID Patient" required>
+      <input type="number" [(ngModel)]="newAppointment.medecinId" name="medecinId" placeholder="ID Médecin" required>
+      <button type="submit" [disabled]="!appointmentForm.form.valid">Ajouter</button>
+    </form>
+  </section>
+  <app-chatbot></app-chatbot>
+  <!-- Liste des rendez-vous -->
+  <section class="appointments-list">
+    <h2>Mes rendez-vous</h2>
+    <ul>
+      <li *ngFor="let rdv of appointments">
+        {{ rdv.date | date:'short' }} - {{ rdv.reason || rdv.motif }}
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section activité récente -->
+  <section class="recent-activity">
+    <h2>Activité récente</h2>
+    <div class="activity-list">
+      <div class="activity-item">
+        <div class="activity-icon"><i class="fas fa-user-plus"></i></div>
+        <div class="activity-content">
+          <p class="activity-text"><strong>Nouvel utilisateur inscrit</strong> - Jean Dupont</p>
+          <p class="activity-time">Il y a 23 minutes</p>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-icon"><i class="fas fa-calendar-plus"></i></div>
+        <div class="activity-content">
+          <p class="activity-text"><strong>Nouveau rendez-vous</strong> - Marie Martin</p>
+          <p class="activity-time">Il y a 1 heure</p>
+        </div>
+      </div>
+      <div class="activity-item">
+        <div class="activity-icon"><i class="fas fa-file-medical-alt"></i></div>
+        <div class="activity-content">
+          <p class="activity-text"><strong>Rapport mis à jour</strong> - Analyse mensuelle</p>
+          <p class="activity-time">Il y a 3 heures</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="dashboard-footer">
+  <p>© 2025 Sahtek - Tous droits réservés</p>
+</footer>

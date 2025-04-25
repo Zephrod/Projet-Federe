@@ -1,0 +1,14 @@
+<div class="chatbot-container">
+  <div class="chat-messages">
+    <div *ngFor="let msg of messages" [ngClass]="msg.from">
+      <strong *ngIf="msg.from==='user'">Vous :</strong>
+      <strong *ngIf="msg.from==='bot'">IA :</strong>
+      <span>{{ msg.text }}</span>
+    </div>
+    <div *ngIf="loading" class="loading">L'IA réfléchit...</div>
+  </div>
+  <form (ngSubmit)="send()" class="chat-input">
+    <input [(ngModel)]="userInput" name="userInput" placeholder="Posez votre question..." required [disabled]="loading">
+    <button type="submit" [disabled]="loading || !userInput.trim()">Envoyer</button>
+  </form>
+</div>

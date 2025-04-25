@@ -1,6 +1,9 @@
 const Appointment = require('../models/appointment');
 const User = require('../models/user');
-
+include: [
+  { model: User, as: 'patient', attributes: ['id', 'name'] },
+  { model: User, as: 'doctor', attributes: ['id', 'name'] }
+],
 module.exports = {
   create: async (req, res) => {
     const { doctorId, date, reason } = req.body;

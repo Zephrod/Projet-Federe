@@ -23,6 +23,7 @@ app.get("/", (request, response, next)=>{
 app.use(userRouter);
 app.use(authRouter);
 app.use(mediRouter);
+app.use(appointmentRouter);
 
 
 

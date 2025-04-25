@@ -16,8 +16,18 @@ Appointment.init({
   reason: {
     type: DataTypes.STRING,
     allowNull: true
+  },
+  patientId: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  doctorId: {
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
-}, {
+
+}, 
+{
   sequelize: connection,
   timestamps: true
 });

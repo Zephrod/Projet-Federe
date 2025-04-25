@@ -1,0 +1,20 @@
+### CRÉER un rendez-vous
+POST http://localhost:3000/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkphbmUgRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDU0NTg0MjQsImV4cCI6MTc0NTQ2MjAyNH0.ClsMJZppiolGWNoiud5fsvZ-7MRQxeXECpkhUcEFuBw
+
+{
+  "date": "2024-07-01T10:00:00Z",
+  "motif": "Consultation générale",
+  "patientId": 3,
+  "medecinId": 2,
+  
+}
+
+### OBTENIR tous mes rendez-vous
+GET http://localhost:3000/appointments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkphbmUgRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDU0NTg0MjQsImV4cCI6MTc0NTQ2MjAyNH0.ClsMJZppiolGWNoiud5fsvZ-7MRQxeXECpkhUcEFuBw
+
+### SUPPRIMER un rendez-vous
+DELETE http://localhost:3000/appointments/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkphbmUgRG9lIiwicm9sZSI6InBhdGllbnQiLCJpYXQiOjE3NDU0NTg0MjQsImV4cCI6MTc0NTQ2MjAyNH0.ClsMJZppiolGWNoiud5fsvZ-7MRQxeXECpkhUcEFuBw
